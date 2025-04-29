@@ -1,0 +1,17 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "aiidalab-qe-bands"
+version = "0.1.0"
+description = "Band structure plugin for AiiDAlab React QE app"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic>=2.0",
+    "aiidalab-react-qe-backend"
+]
+
+[project.entry-points."aiidalab_qe.plugins"]
+bands = "aiidalab_qe_bands.models:get_plugin"
